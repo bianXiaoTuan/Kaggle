@@ -39,6 +39,15 @@ ImageId,Label
 (27997 more lines)
 {code}
 
+# 训练方法
+
+* 执行tools.py中load_train_data()
+* 执行train
+* 执行tools.py中load_test_data()
+* 执行predict 
+* 执行tools.py中generate_result()
+* 结果为result.csv
+
 # 提交记录
 
 ## Logistic Regression
@@ -47,8 +56,25 @@ ImageId,Label
 使用训练集作为测试集，准确率: 0.893000
 
 使用48000个训练集, lambda = 0.1, 迭代次数 = 100
+使用训练集作为测试集，准确率: 92.614
+使用测试集，准确率: 
+
+{code}
+Training One-vs-All Logistic Regression...
+Iteration   100 | Cost: 1.892930e-02
+Iteration   100 | Cost: 6.670110e-02
+Iteration   100 | Cost: 8.513016e-02
+Iteration   100 | Cost: 4.373132e-02
+Iteration   100 | Cost: 8.311120e-02
+Iteration   100 | Cost: 3.740943e-02
+Iteration   100 | Cost: 4.392053e-02
+Iteration   100 | Cost: 1.480923e-01
+Iteration   100 | Cost: 1.066616e-01
+Iteration   100 | Cost: 9.863508e-10
+{code}
+
+使用48000个训练集, lambda = 0.1, 迭代次数 = 300
 使用训练集作为测试集，准确率: 0.831500
-使用测试集，准确率: 0.81786
 
 ## Logistic Regression with Regularization
 只使用1000个训练集

@@ -21,11 +21,6 @@ m = size(X, 1);
 % disp(size(X));    % 1000 * 784
 % disp(size(y));    % 1000 * 1
 
-% Randomly select 100 data points to display
-% rand_indices = randperm(m);
-% sel = X(rand_indices(1:100), :);
-% displayData(sel);
-
 fprintf('Program paused. Press enter to continue.\n');
 pause;
 
@@ -43,6 +38,5 @@ pause;
 
 %% ================ Part 3: Predict for One-Vs-All ================
 
-% pred = predictOneVsAll(all_theta, X);
-
-% fprintf('\nTraining Set Accuracy: %f\n', mean(double(pred == y)) * 100);
+pred = predictOneVsAll(all_theta, X);
+fprintf('\nTraining Set Accuracy: %f\n', mean(double(pred == y)) * 100);

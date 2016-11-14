@@ -1,4 +1,4 @@
-%% Kaggle | Digit Recognizer
+%% Kaggle | Digit Recognizer Predict
 
 %% Initialization
 clear ; close all; clc
@@ -9,9 +9,8 @@ num_labels = 10;          % 10 labels, from 0 to 9
 
 %% =========== Part 1: Loading and Visualizing Data =============
 
-fprintf('Loading and Visualizing Data\n')
+fprintf('Loading Data\n')
 
-% X = load('data/test.mat');
 X = load('../data/test.mat');
 X = double(X.data);
 
