@@ -6,7 +6,7 @@ function [J, grad] = lrCostFunction(theta, X, y, lambda)
 %   gradient of the cost w.r.t. to the parameters.
 
 % disp(size(theta));    % 785 * 1
-% disp(size(X));    % 1000 * 784
+% disp(size(X));    % 1000 * 785
 % disp(size(y));    % 1000 * 1
 
 % Initialize some useful values

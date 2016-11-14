@@ -50,14 +50,11 @@ ImageId,Label
 
 # 提交记录
 
-## Logistic Regression
-
-使用1000个训练集, lambda = 0.1, 迭代次数 = 100
-使用训练集作为测试集，准确率: 0.893000
+## Logistic Regression with Regularization
 
 使用48000个训练集, lambda = 0.1, 迭代次数 = 100
 使用训练集作为测试集，准确率: 92.614
-使用测试集，准确率: 
+使用测试集，准确率: 91.357
 
 {code}
 Training One-vs-All Logistic Regression...
@@ -70,16 +67,30 @@ Iteration   100 | Cost: 3.740943e-02
 Iteration   100 | Cost: 4.392053e-02
 Iteration   100 | Cost: 1.480923e-01
 Iteration   100 | Cost: 1.066616e-01
-Iteration   100 | Cost: 9.863508e-10
+Iteration   100 | Cost: 1.908072e-02
 {code}
 
-使用48000个训练集, lambda = 0.1, 迭代次数 = 300
-使用训练集作为测试集，准确率: 0.831500
+使用48000个训练集, lambda = 0.1, 迭代次数 = 400
+使用训练集作为测试集，准确率: 93.202381
+使用测试集，准确率: 0.91357
+证明提高迭代次数效果不明显
 
-## Logistic Regression with Regularization
+{code}
+Training One-vs-All Logistic Regression...
+Iteration   400 | Cost: 1.493759e-02
+Iteration   400 | Cost: 6.337745e-0222
+Iteration   400 | Cost: 8.274349e-02
+Iteration   400 | Cost: 4.058277e-02
+Iteration   400 | Cost: 7.748457e-02
+Iteration   400 | Cost: 3.434329e-02
+Iteration   400 | Cost: 4.010869e-02
+Iteration   400 | Cost: 1.438395e-01
+Iteration   400 | Cost: 1.019488e-01
+Iteration   400 | Cost: 1.818088e-02
+Program paused. Press enter to continue.
+{code}
+
 只使用1000个训练集
-
-## Neural Network
 
 ## Neural Network with Regularization
 
