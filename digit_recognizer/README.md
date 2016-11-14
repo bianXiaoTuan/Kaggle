@@ -39,7 +39,7 @@ ImageId,Label
 (27997 more lines)
 {code}
 
-# 训练方法
+# Logistic Regression
 
 * 执行tools.py中load_train_data()
 * 执行train
@@ -48,9 +48,7 @@ ImageId,Label
 * 执行tools.py中generate_result()
 * 结果为result.csv
 
-# 提交记录
-
-## Logistic Regression with Regularization
+## 提交记录
 
 使用48000个训练集, lambda = 0.1, 迭代次数 = 100
 使用训练集作为测试集，准确率: 92.614
@@ -92,5 +90,13 @@ Program paused. Press enter to continue.
 
 只使用1000个训练集
 
-## Neural Network with Regularization
+# Neural Network
+
+## Neural Network Topology
+
+(784 + 1) * (784 + 1) * 10
+
+
+
+
 

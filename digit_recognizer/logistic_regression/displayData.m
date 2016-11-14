@@ -16,17 +16,17 @@ colormap(gray);
 [m n] = size(X);    % m = 100, m = 784
 example_height = (n / example_width);
 
-disp(m);    % 100
-disp(n);    % 784
-disp(example_height);    % 28
-disp(example_width);     % 28
+% disp(m);    % 100
+% disp(n);    % 784
+% disp(example_height);    % 28
+% disp(example_width);     % 28
 
 % Compute number of items to display
 display_rows = floor(sqrt(m));
 display_cols = ceil(m / display_rows);
 
-disp(display_rows);    % 10
-disp(display_cols);    % 10
+% disp(display_rows);    % 10
+% disp(display_cols);    % 10
 
 % % Between images padding
 pad = 1;
