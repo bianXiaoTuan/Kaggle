@@ -1,4 +1,4 @@
-%% 测试逻辑回归函数
+%% 测试流程, 用于测试逻辑回归
 
 %% Initialization
 clear ; close all; clc
@@ -29,7 +29,7 @@ pause;
 
 fprintf('Test Logistic Regression\n')
 
-pred = predictOneVsAll(all_theta, X);
+pred = predictBylr(all_theta, X);
 
 fprintf('\nTraining Set Accuracy: %f\n', mean(double(pred == y)) * 100);
 
