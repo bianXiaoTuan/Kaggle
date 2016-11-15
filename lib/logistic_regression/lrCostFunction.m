@@ -12,6 +12,8 @@ m = length(y);
 J = 0;
 grad = zeros(size(theta));
 
+addpath(genpath('../../lib'));
+
 % ====================== YOUR CODE HERE ======================
 
 % Cost Function

@@ -11,6 +11,8 @@ function [all_theta] = logisticRegression(X, y, num_labels, lambda, iter_num)
 % Return:
 % all_theta: 逻辑回归all_theta
 
+addpath(genpath('../../lib'));
+
 %% ============ 参数检查 ============
 [m n] = size(X);
 all_theta = zeros(num_labels, n + 1);
