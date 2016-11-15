@@ -1,7 +1,7 @@
 X = load('../data/test.mat');
 X = X.data;
 
-sel = X(1:4, :);
+sel = X(224, :);
 
 displayData(sel);
 

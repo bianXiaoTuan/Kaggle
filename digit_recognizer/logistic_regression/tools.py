@@ -18,7 +18,7 @@ def load_training_data():
     data = [row for row in reader]
 
     # 训练集数量
-    NUM = 10000001
+    NUM = 1001
     x = np.mat([[int(elem) for elem in row[1:]] for row in data[1:NUM]])
 
     # 将 0 转成 10

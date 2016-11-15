@@ -2,9 +2,7 @@
 
 %% Initialization
 clear ; close all; clc
-
-%% Setup the parameters you will use
-num_labels = 10;          % 10 labels, from 0 to 9
+addpath(genpath('../../lib'));
 
 %% =========== Part 1: Loading =============
 
@@ -16,20 +14,18 @@ X = double(X.data);
 y = load('../data/y.mat');
 y = double(y.data);
 
-m = size(X, 1);
-
-% disp(size(X));    % 1000 * 784
-% disp(size(y));    % 1000 * 1
-
 fprintf('Program paused. Press enter to continue.\n');
 pause;
 
-%% ============ Part 2: Vectorize Logistic Regression ============
+%% ============ Part 2: Logistic Regression ============
 
 fprintf('\nTraining One-vs-All Logistic Regression...\n')
 
 lambda = 0.1;
-[all_theta] = multiLogisticRegression(X, y, num_labels, lambda);
+iter_num = 10;
+num_labels = 10;
+
+[all_theta] = logisticRegression(X, y, num_labels, lambda, iter_num);
 
 save('../data/all_theta.mat', 'all_theta');
 
