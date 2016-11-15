@@ -39,7 +39,7 @@ A1 = sigmoid(X * Theta1');
 A1 = [ones(size(A1, 1), 1) A1];
 h = sigmoid(A1 * Theta2');
 
-% Enlarge y to 5000 * 10
+% Enlarge y
 Y = zeros(size(h));
 for i = 1:size(y, 1)
     Y(i, y(i)) = 1;
@@ -50,8 +50,8 @@ j = -Y .* log(h) - (1 - Y) .* log(1 - h);
 J = sum(sum(j, 2)) / m;
 
 % Bias
-theta1 = Theta1(:, 2:size(Theta1, 2));    % 25 * 400
-theta2 = Theta2(:, 2:size(Theta2, 2));    % 10 * 25
+theta1 = Theta1(:, 2:size(Theta1, 2));
+theta2 = Theta2(:, 2:size(Theta2, 2)); 
 bias1 = sum(sum(theta1 .^ 2, 2));
 bias2 = sum(sum(theta2 .^ 2, 2));
 bias = (bias1 + bias2) * lambda / (2 * m);
@@ -60,6 +60,7 @@ bias = (bias1 + bias2) * lambda / (2 * m);
 J = J + bias;
 
 % -------------------------------------------------------------
+% 反向传播
 for t = 1:m
     a1 = X(t, :)';
 
@@ -83,6 +84,5 @@ Theta1_grad = Theta1_grad / m;
 
 % Unroll gradients
 grad = [Theta1_grad(:) ; Theta2_grad(:)];
-
 
 end
