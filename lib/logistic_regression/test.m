@@ -12,18 +12,13 @@ load('data/data.mat');
 m = size(X, 1);
 num_labels = 10;
 
-fprintf('Program paused. Press enter to continue.\n');
-pause;
-
 %% ============ 逻辑回归 ============
 
 fprintf('Test Logistic Regression\n')
 
 lambda = 0.1;
-all_theta = logisticRegression(X, y, num_labels, lambda, 100);
-
-fprintf('Program paused. Press enter to continue.\n');
-pause;
+iter_num = 100;
+all_theta = logisticRegression(X, y, num_labels, lambda, iter_num);
 
 %% ============ 验证 ============
 
@@ -35,9 +30,3 @@ fprintf('\nTraining Set Accuracy: %f\n', mean(double(pred == y)) * 100);
 
 fprintf('Program paused. Press enter to continue.\n');
 pause;
-
-%% ============ 绘制Learning Curve ============
-
-
-
-

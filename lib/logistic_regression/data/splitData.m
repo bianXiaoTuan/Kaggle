@@ -1,21 +1,24 @@
-%% 将数据分成trainning、cross validation、test三个部分
+%% 将Data数据分成按照60%、20%、20%的比例
+%% 分成trainning、cross validation、test三部分
+%% 存入splitData.mat中
+
+clear ; close all; clc
+addpath(genpath('../../../lib'));
 
 load('data.mat');
-
-disp(size(X));
-disp(size(y));
-
-
 m = size(X, 1);
 
+%% Shuffle
+rand_indexes = randperm(m);
+X = X(rand_indexes, :);
+y = y(rand_indexes, :);
+
+%% 计算每部分数据up_index
 train_up = m / 100 * 60;
 cv_up = m / 100 * 80;
 test_up = m;
 
-disp(train_up);
-disp(cv_up);
-disp(test_up);
-
+%% 拆分数据
 x_train = X(1:train_up, :);
 y_train = y(1:train_up, :);
 
@@ -25,20 +28,12 @@ y_cv = y(train_up+1:cv_up, :);
 x_test = X(cv_up+1:test_up, :);
 y_test = y(cv_up+1:test_up, :);
 
-disp(size(x_train));
-disp(size(y_train));
+%% 存储数据
+save('splitData.mat');
 
-disp(size(x_cv));
-disp(size(y_cv));
+%% 检查shuffle后图片和数据是否对应
+x = x_cv(1:16, :);
+y = y_cv(1:16);
 
-disp(size(x_test));
-disp(size(y_test));
-
-save('x_train.mat', 'x_train');
-save('y_train.mat', 'y_train');
-
-save('x_cv.mat', 'x_cv');
-save('y_cv.mat', 'y_cv');
-
-save('x_test.mat', 'x_test');
-save('y_test.mat', 'y_test');
+displayData(x);
+disp(y);

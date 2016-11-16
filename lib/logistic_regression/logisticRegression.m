@@ -19,7 +19,7 @@ all_theta = zeros(num_labels, n + 1);
 
 if m ~= size(y, 1)
 	fprintf('size(X, 1) must equal to size(y, 1).\n');
-	exit;
+	return;
 end	
 
 %% ============ 逻辑回归 ============
