@@ -7,6 +7,7 @@ error_cv   = zeros(count, 1);
 
 for i = 1:count
 	lambda = lambda_vec(i);
+    fprintf('Lambda: %f\n', lambda);
 
 	% 训练
 	theta = logisticRegression(x_train, y_train, num_labels, lambda, iter_num);

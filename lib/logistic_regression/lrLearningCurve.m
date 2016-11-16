@@ -15,6 +15,8 @@ error_cv   = zeros(num, 1);
 for n = 1:num
 	% 训练
 	count = n * step;
+    fprintf('Training Set Size: %d\n', count);
+
 	theta = logisticRegression(x_train(1:count, :), y_train(1:count), num_labels, lambda, iter_num);
 
 	% 计算预测准确率
