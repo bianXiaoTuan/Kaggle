@@ -22,7 +22,7 @@ pause;
 fprintf('Test Neural Network\n')
 
 lambda = 0.1;
-iter_num = 10;
+iter_num = 100;
 input_layer_size  = 784;
 hidden_layer_size = 24;
 num_labels = 10;
@@ -37,6 +37,6 @@ pause;
 
 %% ================= Part 10: Implement Predict =================
 
-pred = predictBynn(theta1, theta2, X);
+pred = predictBynn(Theta1, Theta2, X);
 
 fprintf('\nTraining Set Accuracy: %f\n', mean(double(pred == y)) * 100);

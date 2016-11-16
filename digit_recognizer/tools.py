@@ -18,7 +18,7 @@ def load_training_data():
     data = [row for row in reader]
 
     # 训练集数量
-    NUM = 101
+    NUM = 10000001
     x = np.mat([[int(elem) for elem in row[1:]] for row in data[1:NUM]])
 
     # 将 0 转成 10
@@ -93,7 +93,7 @@ def verify():
     print '预测准确率: %f' % (float(right_count) / float(length))
 
 if __name__ == '__main__':
-    load_training_data()
-    # load_test_data()
-    # generate_result()
+    #load_training_data()
+    #load_test_data()
+    generate_result()
     # verify()
