@@ -2,8 +2,61 @@
 #_*_ encoding=utf-8 _*_
 
 import csv
+import random
 import numpy as np
 from scipy import io
+
+def load_data():
+    ''' 将训练集转成6份mat文件
+    训练集: x.mat y.mat
+    交叉验证集: x_cv.mat y_cv.mat
+    测试集: x_t.mat y_t.mat
+
+    In Matlab
+    x = load('x.mat')
+    x = x.data
+    '''
+    f = open('./data/train.csv', 'rb')
+    reader = csv.reader(f)
+
+    # Remove first line
+    data = [row for row in reader]
+    data = [row for row in data[1:]]
+
+    # Shuffle
+    random.shuffle(data)
+
+    total_count = len(data)
+    train_up_index = total_count / 100 * 60
+    cv_up_index = total_count / 100 * 80
+    test_up_index = total_count
+
+    x_train = np.mat([[int(elem) for elem in row[1:]] for row in data[0:train_up_index]])
+    y_train = np.mat([int(row[0]) if int(row[0]) != 0 else 10 for row in data[0:train_up_index]])
+    y_train = y_train.conj().transpose()
+
+    x_cv = np.mat([[int(elem) for elem in row[1:]] for row in data[train_up_index:cv_up_index]])
+    y_cv = np.mat([int(row[0]) if int(row[0]) != 0 else 10 for row in data[train_up_index:cv_up_index]])
+    y_cv = y_cv.conj().transpose()
+
+    x_test = np.mat([[int(elem) for elem in row[1:]] for row in data[cv_up_index:test_up_index]])
+    y_test = np.mat([int(row[0]) if int(row[0]) != 0 else 10 for row in data[cv_up_index:test_up_index]])
+    y_test = y_test.conj().transpose()
+
+    print np.shape(x_train)
+    print np.shape(y_train)
+    io.savemat('./data/x.mat', {'data': x_train})
+    io.savemat('./data/y.mat', {'data': y_train})
+
+    print np.shape(x_cv)
+    print np.shape(y_cv)
+    io.savemat('./data/x_cv.mat', {'data': x_cv})
+    io.savemat('./data/y_cv.mat', {'data': y_cv})
+
+    print np.shape(x_test)
+    print np.shape(y_test)
+    io.savemat('./data/x_t.mat', {'data': x_test})
+    io.savemat('./data/y_t.mat', {'data': y_test})
 
 def load_training_data():
     ''' 将训练集转成mat文件
@@ -93,7 +146,8 @@ def verify():
     print '预测准确率: %f' % (float(right_count) / float(length))
 
 if __name__ == '__main__':
+    load_data()
     #load_training_data()
     #load_test_data()
-    generate_result()
+    # generate_result()
     # verify()

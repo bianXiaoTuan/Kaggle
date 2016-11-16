@@ -35,3 +35,9 @@ fprintf('\nTraining Set Accuracy: %f\n', mean(double(pred == y)) * 100);
 
 fprintf('Program paused. Press enter to continue.\n');
 pause;
+
+%% ============ 绘制Learning Curve ============
+
+
+
+

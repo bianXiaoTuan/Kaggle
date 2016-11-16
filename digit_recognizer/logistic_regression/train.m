@@ -22,7 +22,7 @@ pause;
 fprintf('\nTraining One-vs-All Logistic Regression...\n')
 
 lambda = 0.1;
-iter_num = 400;
+iter_num = 20;
 num_labels = 10;
 
 [all_theta] = logisticRegression(X, y, num_labels, lambda, iter_num);
