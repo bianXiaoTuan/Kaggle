@@ -23,6 +23,11 @@ def load_data():
     data = [row for row in reader]
     data = [row for row in data[1:]]
 
+    # Total Data
+    x = np.mat([[int(elem) for elem in row[1:]] for row in data])
+    y = np.mat([int(row[0]) if int(row[0]) != 0 else 10 for row in data])
+    y = y.conj().transpose()
+
     # Shuffle
     random.shuffle(data)
 
@@ -31,22 +36,30 @@ def load_data():
     cv_up_index = total_count / 100 * 80
     test_up_index = total_count
 
+    # Train Data
     x_train = np.mat([[int(elem) for elem in row[1:]] for row in data[0:train_up_index]])
     y_train = np.mat([int(row[0]) if int(row[0]) != 0 else 10 for row in data[0:train_up_index]])
     y_train = y_train.conj().transpose()
 
+    # Cross validated Data
     x_cv = np.mat([[int(elem) for elem in row[1:]] for row in data[train_up_index:cv_up_index]])
     y_cv = np.mat([int(row[0]) if int(row[0]) != 0 else 10 for row in data[train_up_index:cv_up_index]])
     y_cv = y_cv.conj().transpose()
 
+    # Test Data
     x_test = np.mat([[int(elem) for elem in row[1:]] for row in data[cv_up_index:test_up_index]])
     y_test = np.mat([int(row[0]) if int(row[0]) != 0 else 10 for row in data[cv_up_index:test_up_index]])
     y_test = y_test.conj().transpose()
 
+    print np.shape(x)
+    print np.shape(y)
+    io.savemat('./data/x.mat', {'data': x})
+    io.savemat('./data/y.mat', {'data': y})
+
     print np.shape(x_train)
     print np.shape(y_train)
-    io.savemat('./data/x.mat', {'data': x_train})
-    io.savemat('./data/y.mat', {'data': y_train})
+    io.savemat('./data/x_train.mat', {'data': x_train})
+    io.savemat('./data/y_train.mat', {'data': y_train})
 
     print np.shape(x_cv)
     print np.shape(y_cv)
@@ -146,8 +159,8 @@ def verify():
     print '预测准确率: %f' % (float(right_count) / float(length))
 
 if __name__ == '__main__':
-    load_data()
+    # load_data()
     #load_training_data()
     #load_test_data()
-    # generate_result()
+    generate_result()
     # verify()

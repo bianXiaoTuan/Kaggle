@@ -22,12 +22,11 @@ pause;
 fprintf('Test Neural Network\n')
 
 lambda = 0.1;
-iter_num = 100;
-input_layer_size  = 784;
-hidden_layer_size = 24;
+iter_num = 5;
 num_labels = 10;
+hidden_layer_size = 784;
 
-[Theta1 Theta2] = neuralNetwork(X, y, lambda, iter_num, input_layer_size, hidden_layer_size, num_labels);
+[Theta1 Theta2] = neuralNetwork(X, y, lambda, iter_num, hidden_layer_size, num_labels);
 
 save('../data/theta1', 'Theta1');
 save('../data/theta2', 'Theta2');

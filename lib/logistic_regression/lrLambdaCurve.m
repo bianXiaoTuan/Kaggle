@@ -36,6 +36,8 @@ ylabel('Error Percent')
 
 legend('Train', 'Cross Validation')
 
+set(gca,'xtick',[])
+
 fprintf('Program paused. Press enter to continue.\n');
 pause;
 

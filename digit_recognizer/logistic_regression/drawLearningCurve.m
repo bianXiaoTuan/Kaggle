@@ -4,10 +4,10 @@
 clear ; close all; clc
 addpath(genpath('../../lib'));
 
-x_train = load('../data/x.mat');
+x_train = load('../data/x_train.mat');
 x_train = double(x_train.data);
 
-y_train = load('../data/y.mat');
+y_train = load('../data/y_train.mat');
 y_train = double(y_train.data);
 
 x_cv = load('../data/x_cv.mat');

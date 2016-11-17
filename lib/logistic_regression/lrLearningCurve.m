@@ -39,7 +39,10 @@ title(sprintf('Logistic Regression Learning Curve'))
 
 xlabel('Number of training examples')
 ylabel('Error')
+
 legend('Train', 'Cross Validation')
+
+set(gca,'xtick',[])
 
 fprintf('Program paused. Press enter to continue.\n');
 pause;

@@ -18,8 +18,8 @@ y = double(y.data);
 
 fprintf('\nTraining One-vs-All Logistic Regression...\n')
 
-lambda = 0.1;
-iter_num = 20;
+lambda = 0.04;
+iter_num = 200;
 num_labels = 10;
 
 [all_theta] = logisticRegression(X, y, num_labels, lambda, iter_num);
