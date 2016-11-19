@@ -26,9 +26,6 @@ theta1 = double(theta1.Theta1);
 theta2 = load('../data/theta2.mat');
 theta2 = double(theta2.Theta2);
 
-fprintf('Program paused. Press enter to continue.\n');
-pause;
-
 %% ================ Part 2: 测试训练集准确率 ================
 
 pred = predictBynn(theta1, theta2, x);

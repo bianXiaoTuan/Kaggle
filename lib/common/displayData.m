@@ -13,14 +13,14 @@ end
 colormap(gray);
 
 % Compute rows, cols
-[m n] = size(X); 
+[m n] = size(X);
 example_height = (n / example_width);
 
 % Compute number of items to display
 display_rows = floor(sqrt(m));
 display_cols = ceil(m / display_rows);
 
-% % Between images padding
+% Between images padding
 pad = 1;
 
 % Setup blank display
@@ -51,7 +51,7 @@ end
 % Display Image
 h = imagesc(display_array, [-1 1]);
 
-% % Do not show axis
+% Do not show axis
 axis image off
 
 drawnow;

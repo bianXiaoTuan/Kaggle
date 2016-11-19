@@ -14,15 +14,12 @@ X = double(X.data);
 y = load('../data/y.mat');
 y = double(y.data);
 
-fprintf('Program paused. Press enter to continue.\n');
-pause;
-
 %% ================ Part 2: Initializing Pameters ================
 
 fprintf('Test Neural Network\n')
 
 lambda = 0.1;
-iter_num = 5;
+iter_num = 100;
 num_labels = 10;
 hidden_layer_size = 784;
 
@@ -30,9 +27,6 @@ hidden_layer_size = 784;
 
 save('../data/theta1', 'Theta1');
 save('../data/theta2', 'Theta2');
-
-fprintf('Program paused. Press enter to continue.\n');
-pause;
 
 %% ================= Part 10: Implement Predict =================
 

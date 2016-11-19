@@ -2,6 +2,7 @@
 
 %% Initialization
 clear ; close all; clc
+addpath(genpath('../../lib'));
 
 %% =========== 加载数据 =============
 
@@ -11,6 +12,15 @@ load('data/data.mat');
 
 disp(size(X));    % 5000 * 400
 disp(size(y));    % 5000 * 1
+
+%% ============ 绘制图a ============
+m = size(X, 1);
+
+% Randomly select 100 data points to display
+sel = randperm(size(X, 1));
+sel = sel(1:100);
+
+displayData(X(sel, :));
 
 %% ============ 神经网络训练 ============
 
