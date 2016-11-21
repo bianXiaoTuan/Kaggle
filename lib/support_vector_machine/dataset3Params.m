@@ -1,4 +1,4 @@
-function [C, sigma] = dataset3Params(X, y, Xval, yval)
+function [C, sigma] = dataset3Params(X, y, Xval, yval, C_vec, sigma_vec)
 %EX6PARAMS returns your choice of C and sigma for Part 3 of the exercise
 %where you select the optimal (C, sigma) learning parameters to use for SVM
 %with RBF kernel
@@ -23,24 +23,9 @@ sigma = 0.3;
 %        mean(double(predictions ~= yval))
 %
 
-%disp(size(X));
-%disp(size(y));
-%disp(size(Xval));
-%disp(size(yval));
-
-C_vec = [0.01 0.03 0.1 0.3 1 3 10 30]';
-sigma_vec = [0.01 0.03 0.1 0.3 1 3 10 30]';
-
-%C_vec = [1.0]';
-%sigma_vec = [0.1]';
-
-%disp(C_vec);
-%disp(sigma_vec);
-
 m_c = size(C_vec,1 );
 m_sigma = size(sigma_vec,1 );
 max_accuracy = 0.0;
-
 
 for i = 1:m_c
     C_tmp = C_vec(i);
@@ -52,6 +37,8 @@ for i = 1:m_c
         predictions = svmPredict(model, Xval);
         
         accuracy = mean(double(predictions == yval));
+        fprintf('Accuracy: %f\n', accuracy);
+
         if accuracy >= max_accuracy
             max_accuracy = accuracy;
             C = C_tmp;
@@ -60,7 +47,7 @@ for i = 1:m_c
     end
 end
 
-fprintf('×¼È·ÂÊ: %f\n', accuracy);
+fprintf('Accuracy: %f\n', max_accuracy);
 fprintf('C: %f\n', C);
 fprintf('sigma: %f\n', sigma);
 

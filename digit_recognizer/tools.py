@@ -32,9 +32,8 @@ def load_data():
     random.shuffle(data)
 
     total_count = len(data)
-    train_up_index = total_count / 100 * 60
-    cv_up_index = total_count / 100 * 80
-    test_up_index = total_count
+    train_up_index = total_count / 100 * 70
+    cv_up_index = total_count
 
     # Train Data
     x_train = np.mat([[int(elem) for elem in row[1:]] for row in data[0:train_up_index]])
@@ -45,11 +44,6 @@ def load_data():
     x_cv = np.mat([[int(elem) for elem in row[1:]] for row in data[train_up_index:cv_up_index]])
     y_cv = np.mat([int(row[0]) if int(row[0]) != 0 else 10 for row in data[train_up_index:cv_up_index]])
     y_cv = y_cv.conj().transpose()
-
-    # Test Data
-    x_test = np.mat([[int(elem) for elem in row[1:]] for row in data[cv_up_index:test_up_index]])
-    y_test = np.mat([int(row[0]) if int(row[0]) != 0 else 10 for row in data[cv_up_index:test_up_index]])
-    y_test = y_test.conj().transpose()
 
     print np.shape(x)
     print np.shape(y)
@@ -65,11 +59,6 @@ def load_data():
     print np.shape(y_cv)
     io.savemat('./data/x_cv.mat', {'data': x_cv})
     io.savemat('./data/y_cv.mat', {'data': y_cv})
-
-    print np.shape(x_test)
-    print np.shape(y_test)
-    io.savemat('./data/x_t.mat', {'data': x_test})
-    io.savemat('./data/y_t.mat', {'data': y_test})
 
 def generate_result():
     ''' 生产符合要求结果文件
@@ -112,6 +101,6 @@ def find_change():
 
 
 if __name__ == '__main__':
-    #load_data()
+    load_data()
     #generate_result()
-	find_change()
+	# find_change()

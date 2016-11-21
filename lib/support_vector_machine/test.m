@@ -87,8 +87,11 @@ fprintf('Program paused. Press enter to continue.\n');
 
 % %% ========== Part 7: Training SVM with RBF Kernel (Dataset 3) ==========
 
+C_vec = [0.01 0.03 0.1 0.3 1 3 10 30]';
+sigma_vec = [0.01 0.03 0.1 0.3 1 3 10 30]';
+
 % Try different SVM Parameters here
-[C, sigma] = dataset3Params(X, y, Xval, yval);
+[C, sigma] = dataset3Params(X, y, Xval, yval, C_vec, sigma_vec);
 
 % Train the SVM
 model= svmTrain(X, y, C, @(x1, x2) gaussianKernel(x1, x2, sigma));

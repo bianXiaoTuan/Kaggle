@@ -19,7 +19,6 @@ function [model] = svmTrain(X, Y, C, kernelFunction, ...
 %           SVMLight (http://svmlight.joachims.org/)
 %
 %
-
 if ~exist('tol', 'var') || isempty(tol)
     tol = 1e-3;
 end
