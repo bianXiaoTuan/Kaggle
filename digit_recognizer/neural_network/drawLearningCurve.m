@@ -19,7 +19,7 @@ y_cv = double(y_cv.data);
 %% ============ Computer Error ============
 num = 10;
 lambda = 0.1;
-iter_num = 50;
+iter_num = 100;
 num_labels = 10;
 hidden_layer_size = 24;
 

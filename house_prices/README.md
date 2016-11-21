@@ -17,53 +17,53 @@ LotShape    (Reg): General shape of property, 房子形状
 LandContour (Lvl): Flatness of the property, 房子平坦度
 Utilities   (AllPub): Type of utilities available, 周边公共设施供给
 LotConfig   (Inside): Lot configuration
-LandSlope   (Gtl): Slope of property
-Neighborhood    (CollgCr): Physical locations within Ames city limits
-Condition1  (Norm): Proximity to main road or railroad
+LandSlope   (Gtl): Slope of property, 房子倾斜度
+Neighborhood    (CollgCr): Physical locations within Ames city limits, 房子所在地址
+Condition1  (Norm): Proximity to main road or railroad, 是否接近主干道
 Condition2  (Norm): Proximity to main road or railroad (if a second is present)
-BldgType    (1Fam): Type of dwelling
-HouseStyle  (2Story): Style of dwelling
-OverallQual (7): Overall material and finish quality
-OverallCond (5): Overall condition rating
-YearBuilt   (2003): Original construction date
-YearRemodAdd    (2003)
-RoofStyle   (Gable)
-RoofMatl    (CompShg)
-Exterior1st (VinylSd)
-Exterior2nd (VinylSd)
-MasVnrType  (BrkFace)
-MasVnrArea  (196)
-ExterQual   (Gd)
-ExterCond   (TA)
-Foundation  (PConc)
-BsmtQual    (Gd)
-BsmtCond    (TA)
-BsmtExposure    (No)
-BsmtFinType1    (GLQ)
-BsmtFinSF1  (706)
-BsmtFinType2    (Unf)
-BsmtFinSF2  (0)
-BsmtUnfSF   (150)
-TotalBsmtSF (856)
-Heating (GasA)
-HeatingQC   (Ex)
-CentralAir  (Y)
-Electrical  (SBrkr)
-1stFlrSF    (856)
-2ndFlrSF    (854)
-LowQualFinSF    (0)
-GrLivArea   (1710)
-BsmtFullBath    (1)
-BsmtHalfBath    (0)
-FullBath    (2)
-HalfBath    (1)
-BedroomAbvGr    (3)
-KitchenAbvGr    (1)
-KitchenQual (Gd)
-TotRmsAbvGrd    (8)
-Functional  (Typ)
-Fireplaces  (0)
-FireplaceQu (NA)
+BldgType    (1Fam): Type of dwelling, 寓所的类型
+HouseStyle  (2Story): Style of dwelling, 寓所的风格
+OverallQual (7): Overall material and finish quality, 使用材料和完成质量
+OverallCond (5): Overall condition rating, 工况等级评价
+YearBuilt   (2003): Original construction date, 竣工时间
+YearRemodAdd    (2003): Remodel date, 改造时间
+RoofStyle   (Gable): Type of roof, 屋顶形状
+RoofMatl    (CompShg): Roof material, 屋顶材料
+Exterior1st (VinylSd): Exterior covering on house, 房子表面材料
+Exterior2nd (VinylSd): Exterior covering on house (if more than one material)
+MasVnrType  (BrkFace): Masonry veneer type, 表层砌体的样式
+MasVnrArea  (196): Masonry veneer area in square feet, 表层砌体的面积
+ExterQual   (Gd): Exterior material quality, 外部材料质量
+ExterCond   (TA): Present condition of the material on the exterior, 外部材料目前情况
+Foundation  (PConc): Type of foundation, 地基类型
+BsmtQual    (Gd): Height of the basement, 地下室高度
+BsmtCond    (TA): General condition of the basement, 地下室条件 
+BsmtExposure    (No): Walkout or garden level basement walls, 
+BsmtFinType1    (GLQ): Quality of basement finished area
+BsmtFinSF1  (706): Type 1 finished square feet
+BsmtFinType2    (Unf):  Quality of second finished area (if present)
+BsmtFinSF2  (0): Type 2 finished square feet
+BsmtUnfSF   (150): Unfinished square feet of basement area
+TotalBsmtSF (856): Total square feet of basement area
+Heating (GasA):  Type of heating
+HeatingQC   (Ex): Heating quality and condition
+CentralAir  (Y): Central air conditioning
+Electrical  (SBrkr): Electrical system
+1stFlrSF    (856): First Floor square feet
+2ndFlrSF    (854): Second floor square feet
+LowQualFinSF    (0): Low quality finished square feet (all floors)
+GrLivArea   (1710): Above grade (ground) living area square feet
+BsmtFullBath    (1): 
+BsmtHalfBath    (0): 
+FullBath    (2): 
+HalfBath    (1): 
+BedroomAbvGr    (3): 
+KitchenAbvGr    (1): 
+KitchenQual (Gd): 
+TotRmsAbvGrd    (8): 
+Functional  (Typ): 
+Fireplaces  (0): 
+FireplaceQu (NA): 
 GarageType  (Attchd)
 GarageYrBlt (2003)
 GarageFinish    (RFn)
