@@ -17,11 +17,11 @@ y_cv = load('../data/y_cv.mat');
 y_cv = double(y_cv.data);
 
 %% ============ Computer Error ============
-num = 10;
+num = 5;
 lambda = 0.1;
 iter_num = 100;
 num_labels = 10;
-hidden_layer_size = 24;
+hidden_layer_size = 784;
 
 nnLearningCurve(x_train, y_train, x_cv, y_cv, num_labels, num, lambda, iter_num, hidden_layer_size)
 

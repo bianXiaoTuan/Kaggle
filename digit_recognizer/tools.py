@@ -71,45 +71,6 @@ def load_data():
     io.savemat('./data/x_t.mat', {'data': x_test})
     io.savemat('./data/y_t.mat', {'data': y_test})
 
-def load_training_data():
-    ''' 将训练集转成mat文件
-
-    In Matlab
-    x = load('x.mat')
-    x = x.data
-    '''
-    f = open('./data/train.csv', 'rb')
-    reader = csv.reader(f)
-
-    data = [row for row in reader]
-
-    # 训练集数量
-    NUM = 10000001
-    x = np.mat([[int(elem) for elem in row[1:]] for row in data[1:NUM]])
-
-    # 将 0 转成 10
-    y = np.mat([int(row[0]) if int(row[0]) != 0 else 10 for row in data[1:NUM]])
-    y = y.conj().transpose()
-
-    io.savemat('./data/x.mat', {'data': x})
-    io.savemat('./data/y.mat', {'data': y})
-
-    return y
-
-def load_test_data():
-    ''' 将测试集转成*.mat文件
-    '''
-    f = open('./data/test.csv', 'rb')
-    reader = csv.reader(f)
-
-    data = [row for row in reader]
-
-    # NUM = 1000
-    NUM = 10000000
-    test = np.mat([[int(elem) for elem in row] for row in data[1:NUM]])
-
-    io.savemat('./data/test.mat', {'data': test})
-
 def generate_result():
     ''' 生产符合要求结果文件
     '''
@@ -132,35 +93,25 @@ def generate_result():
 
     f.close()
 
-def verify():
+def find_change():
     ''' 将训练结果作用于测试集, 验证测试效果
     '''
-    # 读取测试集训练数据
-    f = open('./data/predict.mat', 'r')
-    predict_nums = [line.split('.')[0].strip() for line in f.readlines()]
-    f.close()
+    f1 = open('./data/result.csv', 'rb')
+    reader1 = csv.reader(f1)
+    data1 = [row for row in reader1]
 
-    length = len(predict_nums)
+    f2 = open('./data/result.csv.lr', 'rb')
+    reader2 = csv.reader(f2)
+    data2 = [row for row in reader2] 
 
-    # 读取训练集结果数据
-    f = open('./data/train.csv', 'rb')
-    reader = csv.reader(f)
-    data = [row for row in reader]
-    trains_nums = [int(row[0]) for row in data[1 : length + 1]]
-    f.close()
-
-    # 计算准确率
-    right_count = 0
+    length = len(data1)
+    diff_data = []
     for i in range(length):
-        if int(predict_nums[i]) == int(trains_nums[i]):
-            right_count = right_count + 1 
+        if data1[i][1] != data2[i][1]:
+            print data1[i] + data2[i]
 
-    print right_count
-    print '预测准确率: %f' % (float(right_count) / float(length))
 
 if __name__ == '__main__':
-    # load_data()
-    #load_training_data()
-    #load_test_data()
-    generate_result()
-    # verify()
+    #load_data()
+    #generate_result()
+	find_change()
